@@ -8,4 +8,8 @@ userRoutes.post('/login') */
 
 userRoutes.get('/', obtenerUsuarios)
 
+//ruta para registrar usuario
+//ruta para iniciar sesión
+//ruta para obtener usuario por id
+
 export default userRoutes
