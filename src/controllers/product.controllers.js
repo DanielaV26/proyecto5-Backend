@@ -29,8 +29,8 @@ export const obtenerProductoporid = async (req, res) => {
     try {
         //con req.params obtenemos la info del la coleccion productos
       const productCategory = req.params.categoria;
-      //con product.find obtenemos las categorias de los productos
-      const producto = await Product.find({categoria: productCategory})
+      //con product.find obtenemosproductos segun la query que ingresemos y { $regex: new RegExp(productCategory, "i")} nos hace que la query sea case insensitive y se le llama "expresión regular"
+      const producto = await Product.find({categoria: { $regex: new RegExp(productCategory, "i")}})
   
       if (!producto) {
         return res.status(404).json({ message: 'Producto no encontrado' });
