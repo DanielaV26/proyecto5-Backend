@@ -1,6 +1,11 @@
 import express from 'express'
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+dotenv.config()
 import userRoutes from './src/routes/user.routes.js'
 import productRoutes from './src/routes/products.routes.js'
+
+mongoose.connect(process.env.MONGO_URI+"brightbooks")
 
 const app = express()
 const PORT = 3000

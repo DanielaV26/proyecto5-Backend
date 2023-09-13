@@ -12,7 +12,7 @@ const productSchema = new mongoose.Schema({
   },
   aroma: {
     type: [String],
-    required: false,
+    
   },
   categoria: {
     type: String,
@@ -28,7 +28,7 @@ const productSchema = new mongoose.Schema({
   },
   color: {
     type: [String],
-    required: false,
+    
   },
   stock: {
     type: [Object],
@@ -56,22 +56,25 @@ const productSchema = new mongoose.Schema({
   },
   sinopsis: {
     type: String,
-    required: false,
+    
   },
   autor: {
     type: String,
-    required: false,
+    
   },
   idioma: {
     type: String,
-    required: false,
+    
   },
   idioma: {
     editorial: String,
-    required: false,
+    
   },
   paginas: {
     type: Number,
-    required: false,
+    
   },
 });
+
+
+export const Product = mongoose.model("producto", productSchema)
