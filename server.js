@@ -8,7 +8,7 @@ import productRoutes from './src/routes/products.routes.js'
 mongoose.connect(process.env.MONGO_URI+"brightbooks")
 
 const app = express()
-const PORT = 3000
+const PORT =  process.env.PORT  || 3000
 
 app.use('/products', productRoutes)
 app.use('/user', userRoutes)
