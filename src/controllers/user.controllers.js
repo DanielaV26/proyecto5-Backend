@@ -22,7 +22,7 @@ export const crearUsuario = async (req, res) => {
           "Su contraseña debe tener al menos 8 carácteres y contener una minúscula, una mayúscula y un número",
       });
   }
-  const encryptedPassword = encrypt(password);
+  const encryptedPassword = encrypt(usuario.password);
   const user = new User({
     ...usuario,
     email: emailToLowerCase,
