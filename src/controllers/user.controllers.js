@@ -27,6 +27,8 @@ export const crearUsuario = async (req, res) => {
     ...usuario,
     email: emailToLowerCase,
     password: encryptedPassword,
+    commune: usuario.commune[0],
+    region: usuario.region[0]
   });
   try {
     const newUser = await user.save();
