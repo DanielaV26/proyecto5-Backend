@@ -1,8 +1,8 @@
-const crypto = require('crypto');
+// const crypto = require('crypto');
+import crypto from 'crypto'
 const salt = process.env.SALT;
 
-const encrypt = (password) => {
+export const encrypt = (password) => {
   return crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512').toString('hex');
 }
 
-module.exports = encrypt;
