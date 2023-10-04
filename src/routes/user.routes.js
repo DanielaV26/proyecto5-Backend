@@ -3,13 +3,18 @@ import {obtenerUsuarios, crearUsuario} from '../controllers/user.controllers.js'
 
 const userRoutes = express.Router()
 
-/* userRoutes.post('/register')
-userRoutes.post('/login') */
+console.log('estamos aquí en las rutas de usuario')
+
+/* 
+userRoutes.post('/register')
+userRoutes.post('/login') 
+*/
 
 userRoutes.get('/', obtenerUsuarios)
 
 //ruta para registrar usuario
 userRoutes.post('/create', crearUsuario)
+
 //ruta para iniciar sesión
 //ruta para obtener usuario por id
 
