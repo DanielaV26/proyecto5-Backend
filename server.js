@@ -10,6 +10,7 @@ import productRoutes from './src/routes/products.routes.js'
 const app = express()
 const PORT =  process.env.PORT  || 3000
 
+app.use(express.json())
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
