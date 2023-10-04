@@ -11,6 +11,7 @@ export const obtenerUsuarios = async (req, res) => {
 export const crearUsuario = async (req, res) => {
   console.log('estoy en la ruta de crear usuario')
   const usuario = req.body;
+  console.log(usuario)
   const emailToLowerCase = usuario.email.toLowerCase();
   const regexPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
   if (!regexPassword.test(usuario.password)) {
