@@ -1,7 +1,8 @@
-const jsonwebtoken = require('jsonwebtoken');
+// const jsonwebtoken = require('jsonwebtoken');
+import jsonwebtoken from 'jsonwebtoken'
 const secret = process.env.JWT_SECRET_KEY;
 
-const generateToken = (user) => {
+export const generateToken = (user) => {
   const { _id, userName, email, isAdmin } = user;
   return jsonwebtoken.sign(
     { _id, userName, email, isAdmin },
@@ -9,5 +10,3 @@ const generateToken = (user) => {
     { expiresIn: '30d' }
   );
 }
-
-module.exports = generateToken;

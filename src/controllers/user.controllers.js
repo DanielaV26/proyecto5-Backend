@@ -1,6 +1,8 @@
-const User = require('../models/user.models');
-const generateToken = require('../helpers/generateToken');
-const encrypt = require('../helpers/encrypt');
+import { User } from '../models/user.models.js'
+// const generateToken = require('../helpers/generateToken');
+import {generateToken} from '../helpers/generateToken.js'
+// const encrypt = require('../helpers/encrypt');
+import {encrypt} from '../helpers/encrypt.js'
 
 export const obtenerUsuarios = async (req, res) => {
   res.status(200).json({ message: "Estos son todos los usuarios" });
