@@ -9,7 +9,9 @@ export const obtenerUsuarios = async (req, res) => {
 };
 
 export const crearUsuario = async (req, res) => {
+  console.log('estoy en la ruta de crear usuario')
   const usuario = req.body;
+  console.log(usuario)
   const emailToLowerCase = usuario.email.toLowerCase();
   const regexPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
   if (!regexPassword.test(usuario.password)) {
@@ -20,11 +22,13 @@ export const crearUsuario = async (req, res) => {
           "Su contraseña debe tener al menos 8 carácteres y contener una minúscula, una mayúscula y un número",
       });
   }
-  const encryptedPassword = encrypt(password);
+  const encryptedPassword = encrypt(usuario.password);
   const user = new User({
     ...usuario,
     email: emailToLowerCase,
     password: encryptedPassword,
+    commune: usuario.commune[0],
+    region: usuario.region[0]
   });
   try {
     const newUser = await user.save();
