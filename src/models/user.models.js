@@ -60,20 +60,10 @@ const userSchema = new mongoose.Schema({
     region: {
         type: String,
         required: false,
-        validate: {
-            validator: function (v) {
-                return /^[a-zA-Z]{4,30}$/.test(v)
-            }
-        }
     },
     commune: {
         type: String,
         required: false,
-        validate: {
-            validator: function (v) {
-                return /^[a-zA-Z]{4,20}$/.test(v)
-            }
-        }
     },
     address: {
         type: String,
@@ -82,11 +72,6 @@ const userSchema = new mongoose.Schema({
     phone: {
         type: String,
         required: false,
-        validate: {
-            validator: function (v) {
-                return /^[0-9]{9,11}$/.test(v)
-            }
-        }
     },
 })
 
