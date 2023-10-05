@@ -30,10 +30,31 @@ export const crearUsuario = async (req, res) => {
     const newUser = await user.save();
     const token = generateToken(newUser);
     res.status(201).json({
-      message: "User created successfully",
+      message: "Usuario creado con éxito",
       token,
     });
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
 };
+
+
+export const loginUsuario = async (req, res) => {
+  const { email, password } = req.body;
+  const encryptedPassword = encrypt(password);
+  try {
+    const user = await User.findOne({ email, password: encryptedPassword })
+    if (user) {
+      const token = generateToken(user);
+      res.status(200).json({
+        message: 'Inicio de sesión exitoso',
+        token
+      });
+    }
+    else {
+      res.status(401).json({ message: 'Credenciales inválidas' });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+}
