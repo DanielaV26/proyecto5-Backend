@@ -1,5 +1,5 @@
 import express from 'express'
-import {obtenerUsuarios, crearUsuario, loginUsuario} from '../controllers/user.controllers.js' 
+import {obtenerUsuarios, crearUsuario, loginUsuario, editarUsuario} from '../controllers/user.controllers.js' 
 
 const userRoutes = express.Router()
 
@@ -18,5 +18,6 @@ userRoutes.post('/create', crearUsuario)
 //ruta para iniciar sesión
 userRoutes.post('/login', loginUsuario)
 //ruta para obtener usuario por id
+userRoutes.put('/update', editarUsuario)
 
 export default userRoutes

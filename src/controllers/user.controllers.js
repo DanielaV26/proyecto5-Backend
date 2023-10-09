@@ -61,4 +61,20 @@ export const loginUsuario = async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
+
+
+}
+
+export const editarUsuario = async (req, res) =>{
+  const usuario = req.body
+  const id = req.params
+  try { 
+    const user = await User.findByIdAndUpdate(id, usuario)
+    res.status (200).json({
+      message: 'Usuario actualizado correctamente', data: user
+    })
+    
+  } catch (error) {
+    
+  }
 }
