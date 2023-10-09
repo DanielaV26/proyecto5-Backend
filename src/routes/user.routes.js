@@ -18,6 +18,6 @@ userRoutes.post('/create', crearUsuario)
 //ruta para iniciar sesión
 userRoutes.post('/login', loginUsuario)
 //ruta para obtener usuario por id
-userRoutes.put('/update', editarUsuario)
+userRoutes.put('/update/:id', editarUsuario)
 
 export default userRoutes
