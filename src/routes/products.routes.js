@@ -10,6 +10,6 @@ productRoutes.get('/product/:id', obtenerProductoporid)
 
 //ruta para obtener producto por categoria
 productRoutes.get('/category/:categoria', obtenerProductoporcategoria)
-productRoutes.get('/favorites', obtenerFavoritos)
+productRoutes.post('/favorites', obtenerFavoritos)
 
 export default productRoutes
