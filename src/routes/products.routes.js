@@ -1,5 +1,5 @@
 import express from 'express'
-import {obtenerProductoporcategoria, obtenerProductoporid, obtenerProductos} from '../controllers/product.controllers.js'
+import {obtenerFavoritos, obtenerProductoporcategoria, obtenerProductoporid, obtenerProductos} from '../controllers/product.controllers.js'
 
 const  productRoutes = express.Router()
 
@@ -10,6 +10,6 @@ productRoutes.get('/product/:id', obtenerProductoporid)
 
 //ruta para obtener producto por categoria
 productRoutes.get('/category/:categoria', obtenerProductoporcategoria)
-
+productRoutes.get('/favorites', obtenerFavoritos)
 
 export default productRoutes
