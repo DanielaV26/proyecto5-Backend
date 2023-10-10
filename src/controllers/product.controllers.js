@@ -45,6 +45,7 @@ export const obtenerProductoporcategoria = async (req, res) => {
 
 export const obtenerFavoritos = async (req, res) => {
   const ids = req.body
+  console.log({ids})
   try {
 
     /* Product.find({ '_id': { $in: ids}})
@@ -53,6 +54,7 @@ export const obtenerFavoritos = async (req, res) => {
      Lo que esta dentro de find es una query que trae los productos que estan incluidos en el arreglo segun el id */
 
     const favoritos = await Product.find({ '_id': { $in: ids } })
+    console.log({favoritos})
     // const favorites = (await Product.find().where('_id')).in(ids).exec()
     res.status(200).json({ message: 'Productos traidos con éxito', favoritos })
   } catch (error) {
